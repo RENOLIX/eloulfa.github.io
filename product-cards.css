@@ -1,0 +1,27 @@
+/* Product cards: original Khadidja dimensions and typography, PC and mobile. */
+.home-products.section-wrap,
+body[data-page="collection"] main.section-wrap,
+body[data-page="new"] main.section-wrap,
+.product-main.section-wrap{max-width:1430px;padding-left:4%;padding-right:4%}
+.home-v3 .home-products{padding-top:55px;padding-bottom:70px}
+.products-two,.listing-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;max-width:none;margin:auto}
+.products-two .product-card,.listing-grid .product-card{max-width:none;min-width:0;color:#111;font-family:Inter,Arial,sans-serif;font-size:14px;font-weight:400}
+.card-image{position:relative;display:block;background:#f0e7e1;aspect-ratio:3/4;height:auto!important;overflow:hidden}
+.card-image img{height:100%;width:100%;object-fit:cover;object-position:top;transition:transform .35s}
+.card-image:hover img{transform:scale(1.035)}
+.products-two .card-details,.listing-grid .card-details{padding:11px 0}
+.products-two .small-label,.listing-grid .small-label{color:#888!important;font-family:Inter,Arial,sans-serif;font-size:9px!important;font-weight:400!important;letter-spacing:.12em!important}
+.products-two .card-name,.listing-grid .card-name{display:block;margin:8px 0;font-family:Inter,Arial,sans-serif;font-size:13px;font-weight:400;line-height:1.35;letter-spacing:normal;color:#111}
+.products-two .card-price,.listing-grid .card-price{font-family:Inter,Arial,sans-serif;font-size:13px!important;font-weight:800!important;color:#111}
+.products-two .color-label,.listing-grid .color-label{font-family:Inter,Arial,sans-serif;font-size:10px!important;font-weight:400;color:#777;margin-top:7px}
+.product-card .color-dot{display:inline-block;width:13px;height:13px;border:1px solid #d3beb8;border-radius:50%;vertical-align:middle}
+.more-section .product-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin:0;max-width:none}
+.more-section .product-card{width:auto;max-width:none;min-width:0}
+.more-section .card-name{white-space:normal;overflow-wrap:anywhere;line-height:1.35}
+@media(max-width:1100px){.products-two,.listing-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.more-section .product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:680px){
+ .home-products.section-wrap,body[data-page="collection"] main.section-wrap,body[data-page="new"] main.section-wrap,.product-main.section-wrap{padding-left:17px;padding-right:17px}
+ .home-v3 .home-products{padding-top:42px;padding-bottom:50px}
+ .products-two,.listing-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+ .more-section .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+}
