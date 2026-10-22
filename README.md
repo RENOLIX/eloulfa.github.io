@@ -24,17 +24,17 @@ Aucune connexion au Firebase, au catalogue dynamique, aux commandes ou au Meta P
 
 ## Visuels
 
-Les quatre photos des robes fournies par le propriétaire sont utilisées uniquement pour les produits : cartes, galeries, panier et récapitulatif. Leur contenu n’a pas été modifié ; elles sont converties en WebP pour le web. Les bannières et les images de marque sont des créations orientales sans personnes, femmes, mannequins ou vêtements portés, réalisées avec l’outil intégré de génération d’images. Logo fourni détouré en PNG avec alpha.
+Les quatre photos des robes fournies par le propriétaire sont utilisées uniquement pour les produits : cartes, galeries, panier et récapitulatif. Leur contenu n’a pas été modifié ; elles sont converties en WebP pour le web. Les bannières et les images de marque sont des compositions créatives chic, épurées, en ivoire, noir et champagne, sans personnes, mannequins, vêtements portés ni décors orientaux. Elles sont réalisées avec l’outil intégré de génération d’images. Logo fourni détouré en PNG avec alpha.
 
-Fichiers dans `assets/` : `logo-transparent.png`, `robe-safran-face.webp`, `robe-safran-pose.webp`, `robe-amethyste-face.webp`, `robe-amethyste-detail.webp`, `creation-orientale.webp`, `arche-orientale.webp`, `details-orientaux.webp`, `atelier.webp`.
+Fichiers dans `assets/` : `logo-transparent.png`, `robe-safran-face.webp`, `robe-safran-pose.webp`, `robe-amethyste-face.webp`, `robe-amethyste-detail.webp`, `campagne-chic.webp`, `silhouette-abstraite.webp`, `matiere-chic.webp`, `atelier-chic.webp`.
 
 Prompts :
 
 - Logo : retirer entièrement le fond beige du logo fourni, préserver EO, les ornements et tous les textes, produire un PNG transparent.
-- Campagne : création artistique sans personne, arche sculptée du Maghreb, rubans abstraits d’étoffes terracotta et prune, lanternes dorées, zellige et ombres végétales, espace central pour le texte.
-- Arche : nature morte créative sans personne, arche terracotta, croissant et étoile sculptés en métal doré, étoffe prune, coffret en nacre, ombres de moucharabieh.
-- Détails : nature morte créative sans personne, bijoux filigranés dorés, ciseaux de broderie, étoffes prune et terracotta, perles et plinthe ivoire sculptée.
-- Atelier : nature morte d’étoffes ivoire et prune brodées d’or, fil et ciseaux de broderie, bois de cèdre sculpté, lumière chaude, sans texte.
+- Campagne : grand ruban sculptural en satin ivoire mêlé à un fin ruban noir, sphère de métal champagne sur socle de pierre claire, studio épuré, lumière latérale, aucune personne, aucun vêtement, aucun motif culturel, aucun texte.
+- Silhouette abstraite : ruban de soie noire flottant comme une sculpture au-dessus d’un monolithe en travertin clair, ligne de métal champagne, lumière de galerie, sans personnes ni vêtements.
+- Matière : pli de soie ivoire, métal champagne et sphère de laque noire sur pierre crème, macro éditoriale minimaliste, sans accessoires décoratifs culturels.
+- Atelier : vague abstraite de satin ivoire bordée d’un ruban noir, socle de pierre blanche et cadre champagne, photographie de studio lumineuse au format paysage.
 
 Les visuels décoratifs illustrent l’univers de marque. Seules les photos fournies par le propriétaire illustrent les deux produits vendus.
 
