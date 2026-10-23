@@ -10,13 +10,15 @@ Deux modèles : Robe Safran (terracotta) et Robe Améthyste (prune et or), chacu
 
 Ouvrir avec `node scripts/serve.cjs`, puis http://127.0.0.1:4173/eloulfa.github.io/.
 
-Contrôles : `node --check store.js`, `node scripts/check.cjs`, `git diff --check`.
+Contrôles : `node --check store.js`, `node --check payment.js`, `node scripts/check.cjs`, `node scripts/test-payment.cjs`, `git diff --check`.
 
 Le site conserve l’accueil en mosaïque, le diaporama, la recherche, les fiches, les galeries, le choix de taille, le panier, le tiroir et les pages d’information de la boutique source. Les couleurs, textes, catégories, photos, prix et tailles sont adaptés à El Oulfa. `product-cards.css` rétablit les dimensions et la typographie exactes des cartes Khadidja : cinq colonnes sur grand écran, quatre sous 1100 px, deux sous 680 px, images au ratio 3/4, écarts de 14 px sur PC et 11 px sur téléphone.
 
 ## Paiement en attente d’intégration
 
-Le parcours est une simulation locale sans mention « démo » dans l’interface. Aucun débit, aucune transaction, aucune commande commerciale et aucun e-mail ne sont envoyés. Les champs de carte sont désactivés. Les coordonnées saisies ne sont ni transmises ni stockées. Seuls les identifiants des produits, tailles, quantités, sous-total, pays et référence de sélection restent dans le sessionStorage de l’onglet. Le panier reste dans localStorage.
+Le parcours est une simulation locale sans mention « démo » dans l’interface. Aucun débit, aucune transaction, aucune commande commerciale et aucun e-mail ne sont envoyés. Les champs de carte permettent la saisie, le formatage et la détection de Visa, Mastercard (plages 51–55 et 2221–2720) et American Express. Les contrôles portent sur longueur et somme de Luhn, expiration et cryptogramme de 3 ou 4 chiffres ; ils ne prouvent ni l’existence d’une carte ni son autorisation bancaire. Le co-marquage CB ne peut pas être confirmé par ce seul contrôle local.
+
+Les coordonnées et les données de carte ne sont ni transmises ni stockées. Les champs de carte n’ont pas de nom, ne sont pas inclus dans les données du formulaire et sont effacés à la validation ou en quittant la page. Seuls les identifiants des produits, tailles, quantités, sous-total, pays et référence de sélection restent dans le sessionStorage de l’onglet. Le panier reste dans localStorage. Les logos vectoriels de marque proviennent de `datatrans/payment-logos` ; leur licence est conservée dans `assets/payments/LICENSE.txt`.
 
 Avant d’accepter des ventes : intégrer un prestataire de paiement via un backend sécurisé et des webhooks, stocker les commandes côté serveur, vérifier les prix côté serveur, fixer les tarifs et délais de livraison, confirmer composition et mensurations, compléter les coordonnées de l’entreprise et les conditions commerciales. Ne placer aucune clé secrète dans GitHub Pages.
 

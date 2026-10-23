@@ -6,6 +6,7 @@ const root=path.resolve(__dirname,'..');
 const memory=new Map();
 const context=vm.createContext({location:{hostname:'renolix.github.io',pathname:'/eloulfa.github.io/',search:''},localStorage:{getItem:k=>memory.get(k)||null,setItem:(k,v)=>memory.set(k,v)},document:{addEventListener(){},querySelectorAll(){return []}},window:{dispatchEvent(){}},CustomEvent:class{},Intl,URLSearchParams,crypto:require('node:crypto').webcrypto});
 const source=fs.readFileSync(path.join(root,'store.js'),'utf8');
+vm.runInContext(fs.readFileSync(path.join(root,'payment.js'),'utf8'),context);
 vm.runInContext(source+';globalThis.inspect={PRODUCTS,COUNTRIES,cartItems,saveCart,cartTotal,money,link,checkoutPage,thanksPage};',context);
 const api=context.inspect;
 assert.equal(api.PRODUCTS.length,2);
@@ -22,7 +23,9 @@ memory.set('eloulfa-cart-v1',JSON.stringify([{id:'unknown',size:'34',quantity:1}
 assert.equal(api.cartItems().length,2);
 assert.equal(api.cartTotal(),240);
 assert.match(api.money(80),/80,00\s*€/);
-assert.match(api.checkoutPage(),/disabled placeholder="••••/);
+assert.match(api.checkoutPage(),/id="card-number"[^>]+required/);
+assert.doesNotMatch(api.checkoutPage(),/input disabled/);
+for(const logo of ['visa','mastercard','amex','cb'])assert.ok(fs.existsSync(path.join(root,'assets/payments',logo+'.svg')));
 assert.doesNotMatch(source,/fetch\(|XMLHttpRequest|firebase|stripe\.com|fbq\(|khadidja|DZD|wilaya/i);
 api.saveCart([]);assert.equal(api.cartTotal(),0);
 const files=[];
@@ -38,4 +41,4 @@ for(const file of html){
   assert.ok(fs.existsSync(path.resolve(path.dirname(file),target)),file+' -> '+target);
  }
 }
-console.log('PASS: 2 products at EUR 80, 13 sizes each, Europe destinations, valid cart totals, inactive card fields, no external order/payment calls, '+html.length+' page asset paths.');
+console.log('PASS: 2 products at EUR 80, 13 sizes each, Europe destinations, valid cart totals, interactive card fields, 4 network logos, no external order/payment calls, '+html.length+' page asset paths.');
